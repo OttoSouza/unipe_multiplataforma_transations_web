@@ -39,14 +39,13 @@ const Expenses = () => {
   });
 
   const map = expenses.map((expense) => (
-    <ListItem className={classes.list} key={expense.id}>
-      <div className={classes.listItem}>
+    <ListItem className={classes.listItem} key={expense.id}>
+      <div className={classes.listItemContainer}>
         <Typography>{expense.name}</Typography>
         <Typography className={classes.listItemContainerValue}>
           R$ {expense.value}
         </Typography>
       </div>
-
       <div className={classes.buttonContainer}>
         <IconButton onClick={() => deleteExpenses(expense.id)}>
           <DeleteOutlineIcon />

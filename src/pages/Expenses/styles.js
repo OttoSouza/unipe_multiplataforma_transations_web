@@ -19,14 +19,14 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   buttonContainer: {
-    display: 'flex',
+    display: "flex",
   },
   button: {
     width: "50%",
     margin: "0 auto",
     backgroundColor: "rgb(234,55,163)",
     color: "#fff",
-    "&:hover": {display: 'flex',
+    "&:hover": {
       backgroundColor: "rgb(234,55,163, 0.6)",
     },
   },
@@ -34,11 +34,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    borderBottom: '1px solid #000'
+    borderBottom: "1px solid #000",
   },
   listItemContainer: {
-    display: 'flex',
-    width: '55%',
+    display: "flex",
+    width: "55%",
     justifyContent: "space-between",
   },
   empty: {
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   emptyTitle: {
     fontSize: "2em",
     fontWeight: "bold",
-    height: "50%",
+    fontFamily: "PT Serif",
   },
 }));
 

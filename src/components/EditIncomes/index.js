@@ -6,13 +6,23 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import { IconButton } from "@material-ui/core";
+import { IconButton, makeStyles } from "@material-ui/core";
 import EditIcon from "@material-ui/icons/Edit";
 import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalContextProvides";
 import { useState } from "react";
 
+const useStyles = makeStyles((theme) => ({
+  cancel: {
+    color: "rgb(234,55,163)",
+
+  },
+  update: {
+    color:  "rgba(43, 190, 242)"
+  }
+}));
 export default function EditIncome({ income }) {
+  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const { updateIncome } = useContext(GlobalContext);
   const [input, setInput] = useState({
@@ -47,10 +57,11 @@ export default function EditIncome({ income }) {
         open={open}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
+        
       >
         <DialogTitle id="form-dialog-title">Update Incomes</DialogTitle>
-        <DialogContent>
-          <DialogContentText>Do you wanna change samething?</DialogContentText>
+        <DialogContent  >
+          <DialogContentText >Do you wanna change samething?</DialogContentText>
           <TextField
             autoFocus
             margin="dense"
@@ -72,10 +83,10 @@ export default function EditIncome({ income }) {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} className={classes.cancel}>
             Cancel
           </Button>
-          <Button onClick={handleSubmit} color="primary">
+          <Button onClick={handleSubmit} className={classes.update}>
             Update
           </Button>
         </DialogActions>

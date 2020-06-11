@@ -24,12 +24,14 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     color: "rgba(43, 190, 242)",
     textAlign: "center",
+    fontFamily: "PT Serif",
   },
   titleExpenses: {
     fontSize: "2.4em",
     fontWeight: "bold",
     color: "rgb(234,55,163)",
     textAlign: "center",
+    fontFamily: "PT Serif",
   },
 }));
 

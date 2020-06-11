@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import { incomesGet, api, expensesGet } from "../services/api";
-
+import {  toast } from 'react-toastify';
 export const GlobalContext = createContext();
 
 function GlobalContextProvider({ children }) {
@@ -14,7 +14,7 @@ function GlobalContextProvider({ children }) {
     api
       .post("create-incomes", values)
       .then((response) => {
-        alert("ok");
+        toast.success('Income Add')
       })
       .catch((err) => {
         console.log(err.response.data.err);
@@ -22,7 +22,7 @@ function GlobalContextProvider({ children }) {
   };
   const deleteIncome = (id) => {
     api.delete(`delete-incomes/${id}`).then((response) => {
-      alert("ok");
+      toast.success('Income Deleted')
     });
   };
 
@@ -32,7 +32,7 @@ function GlobalContextProvider({ children }) {
 
   const updateIncome = (id, name, value) => {
     api.put(`update-Incomes/${id}`, { name, value }).then((response) => {
-      alert("ok");
+      toast.success('Income Update');
     });
   };
 
@@ -54,7 +54,7 @@ function GlobalContextProvider({ children }) {
     api
       .post("create-expenses", values)
       .then((response) => {
-        alert("Expenses Add");
+        toast.success('Expense Add');
       })
       .catch((err) => {
         console.log(err.response.data.err);
@@ -63,15 +63,15 @@ function GlobalContextProvider({ children }) {
 
   const deleteExpenses = (id) => {
     api.delete(`delete-expenses/${id}`).then((response) => {
-      alert("Expenses deleted");
+      toast.success('Expense Deleted');
     });
   };
 
   const updateExpenses = (id, name, value) => {
-    api.put(`update-expenses/${id}`, {name, value}).then(response => {
-      alert('Expenses Updated')
-    })
-  }
+    api.put(`update-expenses/${id}`, { name, value }).then((response) => {
+      toast.success('Expense Updated');
+    });
+  };
   return (
     <GlobalContext.Provider
       value={{
@@ -84,7 +84,7 @@ function GlobalContextProvider({ children }) {
         expenses,
         addExpenses,
         deleteExpenses,
-        updateExpenses
+        updateExpenses,
       }}
     >
       {children}

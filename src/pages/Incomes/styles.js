@@ -47,7 +47,8 @@ const useStyles = makeStyles((theme) => ({
   emptyTitle: {
     fontSize: "2em",
     fontWeight: "bold",
-    height: "50%",
+    fontFamily: "PT Serif",
+
   },
 }));
 

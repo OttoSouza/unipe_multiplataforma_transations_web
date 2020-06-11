@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import useStyles from "./styles";
 import Header from "../../components/Header";
@@ -7,9 +7,11 @@ import Incomes from "../Incomes";
 import Expenses from "../Expenses";
 import Balance from "../../components/Balance";
 import GlobalContextProvider from "../../context/GlobalContextProvides";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Main = () => {
   const styles = useStyles();
+
   return (
     <GlobalContextProvider>
       <Header />
@@ -26,6 +28,7 @@ const Main = () => {
             <Expenses />
           </Grid>
         </Grid>
+        <ToastContainer position="top-right" autoClose={3000} />
       </div>
     </GlobalContextProvider>
   );

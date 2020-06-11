@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     width: "90%",
     margin: "0 auto",
     paddingTop: 10,
-    paddingBottom: 14
+    paddingBottom: 14,
   },
   logo: {
     width: 60,
@@ -18,10 +18,11 @@ const useStyles = makeStyles((theme) => ({
   },
   app: {
     backgroundColor: "#6b4ee6",
-    borderRadius: 10
+    borderRadius: 10,
   },
   title: {
     flexGrow: 1,
+    fontFamily: "PT Serif",
   },
 }));
 
