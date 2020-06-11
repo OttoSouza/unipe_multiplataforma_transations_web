@@ -9,7 +9,7 @@ const FormTransactions = ({ children, title }) => {
         {title === "Add Incomes" ? (
           <Typography className={classes.titleIncomes}>Add Incomes</Typography>
         ) : (
-          <Typography className={classes.titleIncomes}>Add Expenses</Typography>
+          <Typography className={classes.titleExpenses}>Add Expenses</Typography>
         )}
         <Paper className={classes.paper} elevation={5}>
           <div className={classes.container}>{children}</div>
