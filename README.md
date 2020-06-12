@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Dillinger
 
-## Available Scripts
+![](https://i.ibb.co/vqjWjqr/screenshot.png)
 
-In the project directory, you can run:
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-### `yarn start`
+# Sobre
+  - Projeto UNIPE
+  - Para realizar testes clique aqui: [budget](https://your-budget.netlify.app).
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  - Utilizando 
+    - Node, 
+    - ReactJs 
+    - React-Native
+  
+- Um simulador de dispesas para fins de aprendizado
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+# Antes de Começar
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - Instale na sua maquina o yarn ou npm para copilar os projetos.
+  - Baixe ou clone o repositorio.
+  - Em seguida execute o camando __'yarn install'__  ou __'npm install'__, para instalar as dependências
 
-### `yarn build`
+# Node 
+- O backend encontra-se no heroku.
+- Frameworks
+    - cors
+    - express
+    - knex e postgres - conexão e gerenciamento do banco
+    
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# ReactJs
+- O projeto react encontra-se na pasta __finances_frontend__.
+- Teve como finalidade ensinar um pouco de cada como consumir uma api ate enviar dados para o memso.
+- Utilização do __FORMIK__ para gerenciamento de Formulários.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Utilizando as funcinalidades mais recentes do React.
+- Frameworkes
+    - Axios 
+    - React Router Dom 
+    - formik
+    - react-toastify
+    - yup
+    - material-
