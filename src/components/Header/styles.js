@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menu: {
     color: "#fff",
+    marginRight: 10
   },
   app: {
     backgroundColor: "#6b4ee6",

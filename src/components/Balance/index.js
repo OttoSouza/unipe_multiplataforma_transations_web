@@ -1,5 +1,11 @@
 import React, { useContext } from "react";
-import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+import {
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Paper,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
@@ -13,26 +19,24 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   paper: {
-    alignSelf: "center",
-    backgroundColor: theme.palette.background.paper,
     borderRadius: 20,
   },
   incomes: {
-    color:  "rgba(43, 190, 242)"
+    color: "rgba(43, 190, 242)",
   },
   expense: {
     color: "rgb(234,55,163)",
   },
   balance: {
-    color: '#000'
-  }, 
+    color: "#000",
+  },
   title: {
-    fontSize: 40
-  }
+    fontSize: 40,
+  },
 }));
 
 const Balance = () => {
-   const { incomes, expenses } = useContext(GlobalContext);
+  const { incomes, expenses } = useContext(GlobalContext);
 
   const incomeValue = incomes.map((income) => income.value);
   const expensesValue = expenses.map((expense) => expense.value);
@@ -49,11 +53,11 @@ const Balance = () => {
 
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div className={classes.root} >
+      <Paper elevation={5} className={classes.paper}>     
       <List
         component="nav"
         aria-label="main mailbox folders"
-        className={classes.paper}
       >
         <ListItem>
           <ListItemIcon className={classes.balance}>
@@ -65,15 +69,20 @@ const Balance = () => {
           <ListItemIcon className={classes.incomes}>
             <AddIcon />
           </ListItemIcon>
-          <ListItemText  primary="Incomes" secondary={totalIncome} />
+          <ListItemText primary="Incomes" secondary={totalIncome} />
         </ListItem>
         <ListItem>
           <ListItemIcon className={classes.expense}>
             <RemoveIcon />
           </ListItemIcon>
-          <ListItemText className={classes.title} primary="Expenses" secondary={totalExpense}  />
+          <ListItemText
+            className={classes.title}
+            primary="Expenses"
+            secondary={totalExpense}
+          />
         </ListItem>
       </List>
+      </Paper>
     </div>
   );
 };

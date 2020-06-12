@@ -15,11 +15,10 @@ import { useState } from "react";
 const useStyles = makeStyles((theme) => ({
   cancel: {
     color: "rgb(234,55,163)",
-
   },
   update: {
-    color:  "rgba(43, 190, 242)"
-  }
+    color: "rgba(43, 190, 242)",
+  },
 }));
 export default function EditIncome({ income }) {
   const classes = useStyles();
@@ -57,11 +56,10 @@ export default function EditIncome({ income }) {
         open={open}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
-        
       >
         <DialogTitle id="form-dialog-title">Update Incomes</DialogTitle>
-        <DialogContent  >
-          <DialogContentText >Do you wanna change samething?</DialogContentText>
+        <DialogContent>
+          <DialogContentText>Do you wanna change samething?</DialogContentText>
           <TextField
             autoFocus
             margin="dense"

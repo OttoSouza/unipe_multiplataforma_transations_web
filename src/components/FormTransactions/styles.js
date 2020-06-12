@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     width: "80%",
     margin: "0 auto",
-    backgroundColor: "#eee",
     borderRadius: 10,
     paddingBottom: 14,
   },

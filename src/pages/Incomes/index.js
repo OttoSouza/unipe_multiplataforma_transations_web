@@ -92,7 +92,7 @@ function Incomes() {
               map
             ) : (
               <div className={classes.empty}>
-                <Typography className={classes.emptyTitle}>Empyt List</Typography>
+                <Typography className={classes.emptyTitle}>Empty List</Typography>
               </div>
             )}
           </List>
