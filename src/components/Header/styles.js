@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 10
   },
   app: {
-    backgroundColor: "#6b4ee6",
+    backgroundColor: "#1C2E42",
     borderRadius: 10,
   },
   title: {

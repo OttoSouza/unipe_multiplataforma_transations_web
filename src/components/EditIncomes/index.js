@@ -20,15 +20,18 @@ const useStyles = makeStyles((theme) => ({
     color: "rgba(43, 190, 242)",
   },
 }));
-export default function EditIncome({ income }) {
+export default function EditIncome({ incomes }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const { updateIncome } = useContext(GlobalContext);
+
   const [input, setInput] = useState({
-    name: income.name,
-    value: income.value,
+    name: incomes.name,
+    value: incomes.value,
   });
+
   const { name, value } = input;
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -36,6 +39,7 @@ export default function EditIncome({ income }) {
   const handleClose = () => {
     setOpen(false);
   };
+
   const handleChange = (event) => {
     event.preventDefault();
     setInput({ ...input, [event.target.name]: event.target.value });
@@ -43,8 +47,8 @@ export default function EditIncome({ income }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    updateIncome(income.id, name, value);
-    setInput({ name: "", value: 0 });
+    updateIncome(incomes.id, name, value);
+    handleClose();
   };
 
   return (
@@ -59,7 +63,7 @@ export default function EditIncome({ income }) {
       >
         <DialogTitle id="form-dialog-title">Update Incomes</DialogTitle>
         <DialogContent>
-          <DialogContentText>Do you wanna change samething?</DialogContentText>
+  <DialogContentText>Do you wanna change samething?</DialogContentText>
           <TextField
             autoFocus
             margin="dense"

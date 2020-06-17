@@ -1,4 +1,4 @@
-# Dillinger
+# BUDGET
 
 ![](https://i.ibb.co/vqjWjqr/screenshot.png)
 
@@ -11,8 +11,7 @@
   - Utilizando 
     - Node, 
     - ReactJs 
-    - React-Native
-  
+
 - Um simulador de dispesas para fins de aprendizado
 
 

@@ -22,10 +22,10 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 20,
   },
   incomes: {
-    color: "rgba(43, 190, 242)",
+    color: "#b83a2e",
   },
   expense: {
-    color: "rgb(234,55,163)",
+    color: "rgb(97, 143, 116)",
   },
   balance: {
     color: "#000",
@@ -42,12 +42,10 @@ const Balance = () => {
   const expensesValue = expenses.map((expense) => expense.value);
 
   const totalIncome = incomeValue
-    .reduce((accumulator, item) => (accumulator += item), 0)
-    .toFixed(2);
+    .reduce((accumulator, item) => (accumulator += item), 0) * 1
 
   const totalExpense = expensesValue
-    .reduce((accumutator, item) => (accumutator += item), 0)
-    .toFixed(2);
+    .reduce((accumutator, item) => (accumutator += item), 0) * 1
 
   const balance = (totalIncome - totalExpense).toFixed(2);
 

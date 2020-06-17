@@ -1,4 +1,4 @@
-import React, { useContext, memo } from "react";
+import React, { useContext, memo, useEffect } from "react";
 import FormTransactions from "../../components/FormTransactions";
 import {
   TextField,
@@ -25,7 +25,8 @@ function Incomes() {
       .min(2, "Too Short!")
       .max(50, "Too Long!")
       .required("Value is required"),
-  });
+  })
+
 
   const formik = useFormik({
     initialValues: {
@@ -33,13 +34,13 @@ function Incomes() {
       value: 0,
     },
     validationSchema: IncomeSchema,
-    onSubmit: (values) => {
-      addIncomes(values);
+    onSubmit: ({name, value}) => {
+      addIncomes(name, value);
     },
   });
 
   const map = incomes.map((income) => (
-    <ListItem className={classes.listItem} key={income.id}>
+    <ListItem key={income.id} className={classes.listItem} >
       <div className={classes.listItemContainer}>
         <Typography>{income.name}</Typography>
         <Typography className={classes.listItemContainerValue}>
@@ -50,7 +51,7 @@ function Incomes() {
         <IconButton onClick={() => deleteIncome(income.id)}>
           <DeleteOutlineIcon />
         </IconButton>
-        <EditIncome income={income} />
+        <EditIncome incomes={income} />
       </div>
     </ListItem>
   ));
@@ -67,9 +68,7 @@ function Incomes() {
             value={formik.values.name}
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
-            error={formik.errors.name}
           />
-
           <TextField
             label="Value"
             className={classes.input}
@@ -77,7 +76,6 @@ function Incomes() {
             name="value"
             value={formik.values.value}
             onChange={formik.handleChange}
-            error={formik.errors.value}
           />
 
           <Button className={classes.button} type="submit">

@@ -19,14 +19,14 @@ const useStyles = makeStyles((theme) => ({
   titleIncomes: {
     fontSize: "2.6em",
     fontWeight: "bold",
-    color: "rgba(43, 190, 242)",
+    color: "#b83a2e",
     fontFamily: "PT Serif",
    
   },
   titleExpenses: {
     fontSize: "2.6em",
     fontWeight: "bold",
-    color: "rgb(234,55,163)",
+    color: "#618F74",
     fontFamily: "PT Serif",
   },
 }));

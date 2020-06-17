@@ -1,46 +1,43 @@
 import React, { createContext, useState, useEffect } from "react";
 import { incomesGet, api, expensesGet } from "../services/api";
-import {  toast } from 'react-toastify';
+import { toast } from "react-toastify";
 export const GlobalContext = createContext();
 
 function GlobalContextProvider({ children }) {
   const [incomes, setIncomes] = useState([]);
   const [expenses, setExpenses] = useState([]);
-  const [itemIncome, setItemIncome] = useState(null);
 
   //Incomes Actions
-
-  const addIncomes = (values) => {
-    api
-      .post("create-incomes", values)
-      .then((response) => {
-        toast.success('Income Add')
-      })
-      .catch((err) => {
-        console.log(err.response.data.err);
-      });
-  };
-  const deleteIncome = (id) => {
-    api.delete(`delete-incomes/${id}`).then((response) => {
-      toast.success('Income Deleted')
-    });
-  };
-
-  const findIncome = (id) => {
-    setItemIncome(incomes.find((income) => income.id === id));
-  };
-
-  const updateIncome = (id, name, value) => {
-    api.put(`update-Incomes/${id}`, { name, value }).then((response) => {
-      toast.success('Income Update');
-    });
-  };
-
   useEffect(() => {
     incomesGet.then((response) => {
       setIncomes(response.data);
     });
-  }, [incomes]);
+  }, []);
+
+  const addIncomes = (name, value) => {
+    api.post("create-incomes", { name, value }).then((response) => {
+      toast.success("Income Add");
+      const newIncome = response.data[0];
+      setIncomes([...incomes, newIncome]);
+    });
+  };
+
+  const deleteIncome = (id) => {
+    api.delete(`delete-incomes/${id}`).then((response) => {
+      setIncomes(incomes.filter((income) => income.id !== id));
+      toast.success("Income Deleted");
+    });
+  };
+
+  const updateIncome = (id, name, value) => {
+    api.put(`update-Incomes/${id}`, { name, value }).then((response) => {
+      const newList = incomes.map((income) =>
+        income.id === id ? { id, name, value } : incomes
+      );
+      setIncomes(newList);
+      toast.success("Income Update");
+    });
+  };
 
   //expenses
 
@@ -48,13 +45,15 @@ function GlobalContextProvider({ children }) {
     expensesGet.then((response) => {
       setExpenses(response.data);
     });
-  }, [expenses]);
+  }, []);
 
   const addExpenses = (values) => {
     api
       .post("create-expenses", values)
       .then((response) => {
-        toast.success('Expense Add');
+        toast.success("Expense Add");
+        const newExpenses = response.data[0];
+        setExpenses([...expenses, newExpenses]);
       })
       .catch((err) => {
         console.log(err.response.data.err);
@@ -63,13 +62,18 @@ function GlobalContextProvider({ children }) {
 
   const deleteExpenses = (id) => {
     api.delete(`delete-expenses/${id}`).then((response) => {
-      toast.success('Expense Deleted');
+      setExpenses(expenses.filter((expense) => expense.id !== id));
+      toast.success("Expense Deleted");
     });
   };
 
   const updateExpenses = (id, name, value) => {
     api.put(`update-expenses/${id}`, { name, value }).then((response) => {
-      toast.success('Expense Updated');
+      const newExpenses = expenses.map((expense) =>
+        expense.id === id ? { id, name, value } : expenses
+      );
+      setExpenses(newExpenses);
+      toast.success("Expense Updated");
     });
   };
   return (
@@ -77,10 +81,8 @@ function GlobalContextProvider({ children }) {
       value={{
         incomes,
         addIncomes,
-        findIncome,
         updateIncome,
         deleteIncome,
-        itemIncome,
         expenses,
         addExpenses,
         deleteExpenses,

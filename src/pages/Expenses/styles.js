@@ -24,10 +24,10 @@ const useStyles = makeStyles((theme) => ({
   button: {
     width: "50%",
     margin: "0 auto",
-    backgroundColor: "rgb(234,55,163)",
+    backgroundColor: "rgb(97, 143, 116)",
     color: "#fff",
     "&:hover": {
-      backgroundColor: "rgb(234,55,163, 0.6)",
+      backgroundColor: "rgb(97, 143, 116, 0.8)",
     },
   },
   listItem: {

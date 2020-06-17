@@ -66,7 +66,7 @@ const Expenses = () => {
             value={formik.name}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            error={formik.errors.name}
+           
           />
           <TextField
             label="Value"
@@ -76,7 +76,7 @@ const Expenses = () => {
             value={formik.value}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            error={formik.errors.value}
+          
           />
           <Button className={classes.button} type="submit">
             Add

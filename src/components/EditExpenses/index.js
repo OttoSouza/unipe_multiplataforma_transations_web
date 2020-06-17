@@ -35,7 +35,7 @@ export default function EditExpenses({ expenses }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     updateExpenses(expenses.id, name, value);
-    setInput({ name: "", value: 0 });
+    handleClose();
   };
 
   return (
