@@ -20,13 +20,9 @@ function Incomes() {
   const { incomes, addIncomes, deleteIncome } = useContext(GlobalContext);
 
   const IncomeSchema = Yup.object().shape({
-    name: Yup.string().required("Name is required"),
-    value: Yup.string()
-      .min(2, "Too Short!")
-      .max(50, "Too Long!")
-      .required("Value is required"),
-  })
-
+    name: Yup.string().required("Income is required"),
+    value: Yup.number().positive().required("Value is required"),
+  });
 
   const formik = useFormik({
     initialValues: {
@@ -34,13 +30,13 @@ function Incomes() {
       value: 0,
     },
     validationSchema: IncomeSchema,
-    onSubmit: ({name, value}) => {
+    onSubmit: ({ name, value }) => {
       addIncomes(name, value);
     },
   });
 
   const map = incomes.map((income) => (
-    <ListItem key={income.id} className={classes.listItem} >
+    <ListItem key={income.id} className={classes.listItem}>
       <div className={classes.listItemContainer}>
         <Typography>{income.name}</Typography>
         <Typography className={classes.listItemContainerValue}>
@@ -66,8 +62,8 @@ function Incomes() {
             type="text"
             name="name"
             value={formik.values.name}
-            onBlur={formik.handleBlur}
             onChange={formik.handleChange}
+            helperText={formik.errors.name}
           />
           <TextField
             label="Value"
@@ -76,6 +72,7 @@ function Incomes() {
             name="value"
             value={formik.values.value}
             onChange={formik.handleChange}
+            helperText={formik.errors.value}
           />
 
           <Button className={classes.button} type="submit">
@@ -90,7 +87,9 @@ function Incomes() {
               map
             ) : (
               <div className={classes.empty}>
-                <Typography className={classes.emptyTitle}>Empty List</Typography>
+                <Typography className={classes.emptyTitle}>
+                  Empty List
+                </Typography>
               </div>
             )}
           </List>

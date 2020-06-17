@@ -6,13 +6,22 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import { IconButton } from "@material-ui/core";
+import { IconButton, makeStyles } from "@material-ui/core";
 import EditIcon from "@material-ui/icons/Edit";
 import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalContextProvides";
 import { useState } from "react";
 
+const useStyles = makeStyles((theme) => ({
+  cancel: {
+    color: "rgb(0,0,0)",
+  },
+  update: {
+    color: "rgb(97, 143, 116)",
+  },
+}));
 export default function EditExpenses({ expenses }) {
+  const classes = useStyles()
   const [open, setOpen] = React.useState(false);
   const { updateExpenses } = useContext(GlobalContext);
   const [input, setInput] = useState({
@@ -37,6 +46,8 @@ export default function EditExpenses({ expenses }) {
     updateExpenses(expenses.id, name, value);
     handleClose();
   };
+
+  
 
   return (
     <div>
@@ -68,10 +79,10 @@ export default function EditExpenses({ expenses }) {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} className={classes.cancel}>
             Cancel
           </Button>
-          <Button onClick={handleSubmit} color="primary">
+          <Button onClick={handleSubmit} className={classes.update}>
             Update
           </Button>
         </DialogActions>

@@ -14,10 +14,10 @@ import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   cancel: {
-    color: "rgb(234,55,163)",
+    color: "rgb(0,0,0)",
   },
   update: {
-    color: "rgba(43, 190, 242)",
+    color: "rgba(184, 58, 46)",
   },
 }));
 export default function EditIncome({ incomes }) {

@@ -41,45 +41,42 @@ const Balance = () => {
   const incomeValue = incomes.map((income) => income.value);
   const expensesValue = expenses.map((expense) => expense.value);
 
-  const totalIncome = incomeValue
-    .reduce((accumulator, item) => (accumulator += item), 0) * 1
+  const totalIncome =
+    incomeValue.reduce((accumulator, item) => (accumulator += item), 0) * 1;
 
-  const totalExpense = expensesValue
-    .reduce((accumutator, item) => (accumutator += item), 0) * 1
+  const totalExpense =
+    expensesValue.reduce((accumutator, item) => (accumutator += item), 0) * 1;
 
   const balance = (totalIncome - totalExpense).toFixed(2);
 
   const classes = useStyles();
   return (
-    <div className={classes.root} >
-      <Paper elevation={5} className={classes.paper}>     
-      <List
-        component="nav"
-        aria-label="main mailbox folders"
-      >
-        <ListItem>
-          <ListItemIcon className={classes.balance}>
-            <AccountBalanceIcon />
-          </ListItemIcon>
-          <ListItemText primary="Balance" secondary={balance} />
-        </ListItem>
-        <ListItem>
-          <ListItemIcon className={classes.incomes}>
-            <AddIcon />
-          </ListItemIcon>
-          <ListItemText primary="Incomes" secondary={totalIncome} />
-        </ListItem>
-        <ListItem>
-          <ListItemIcon className={classes.expense}>
-            <RemoveIcon />
-          </ListItemIcon>
-          <ListItemText
-            className={classes.title}
-            primary="Expenses"
-            secondary={totalExpense}
-          />
-        </ListItem>
-      </List>
+    <div className={classes.root}>
+      <Paper elevation={5} className={classes.paper}>
+        <List component="nav" aria-label="main mailbox folders">
+          <ListItem>
+            <ListItemIcon className={classes.balance}>
+              <AccountBalanceIcon />
+            </ListItemIcon>
+            <ListItemText primary="Balance" secondary={`R$ ${balance}`} />
+          </ListItem>
+          <ListItem>
+            <ListItemIcon className={classes.incomes}>
+              <AddIcon />
+            </ListItemIcon>
+            <ListItemText primary="Incomes" secondary={`R$ ${totalIncome.toFixed(2)}`} />
+          </ListItem>
+          <ListItem>
+            <ListItemIcon className={classes.expense}>
+              <RemoveIcon />
+            </ListItemIcon>
+            <ListItemText
+              className={classes.title}
+              primary="Expenses"
+              secondary={`R$ ${totalExpense.toFixed(2)}`}
+            />
+          </ListItem>
+        </List>
       </Paper>
     </div>
   );

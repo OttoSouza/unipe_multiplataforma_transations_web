@@ -21,11 +21,8 @@ const Expenses = () => {
   const { expenses, addExpenses, deleteExpenses } = useContext(GlobalContext);
 
   const ExpensesSchema = Yup.object().shape({
-    name: Yup.string().required("Name is required"),
-    value: Yup.string()
-      .min(2, "Too Short!")
-      .max(50, "Too Long!")
-      .required("Value is required"),
+    name: Yup.string().required("Expense is required"),
+    value: Yup.number().positive().required("Value is required"),
   });
   const formik = useFormik({
     initialValues: {
@@ -65,8 +62,7 @@ const Expenses = () => {
             name="name"
             value={formik.name}
             onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-           
+            helperText={formik.errors.name}      
           />
           <TextField
             label="Value"
@@ -75,8 +71,7 @@ const Expenses = () => {
             name="value"
             value={formik.value}
             onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          
+            helperText={formik.errors.value}        
           />
           <Button className={classes.button} type="submit">
             Add
