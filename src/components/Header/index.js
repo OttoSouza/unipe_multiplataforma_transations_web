@@ -8,7 +8,6 @@ import {
   Typography,
   IconButton,
   Link,
-  Button,
 } from "@material-ui/core/";
 
 import useStyles from "./styles";
