@@ -1,6 +1,6 @@
 # BUDGET
 
-![](https://i.ibb.co/vqjWjqr/screenshot.png)
+![](https://i.ibb.co/dpMkNHt/screenshot-4.png)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
@@ -30,8 +30,8 @@
     
 
 # ReactJs
-- O projeto react encontra-se na pasta __finances_frontend__.
-- Teve como finalidade ensinar um pouco de cada como consumir uma api ate enviar dados para o memso.
+- O projeto react encontra-se na pasta __unipe_multiplataforma_frontend__.
+- Teve como finalidade ensinar um pouco de cada como consumir uma api ate enviar dados para o mesmo.
 - Utilização do __FORMIK__ para gerenciamento de Formulários.
 
 - Utilizando as funcinalidades mais recentes do React.
@@ -41,4 +41,4 @@
     - formik
     - react-toastify
     - yup
-    - material-
+    - material-ui
