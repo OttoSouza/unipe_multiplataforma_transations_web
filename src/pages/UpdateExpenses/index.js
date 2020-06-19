@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     color: "rgb(97, 143, 116)",
   },
 }));
-export default function EditExpenses({ expenses }) {
+export default function UpdateExpenses({ expenses }) {
   const classes = useStyles()
   const [open, setOpen] = React.useState(false);
   const { updateExpenses } = useContext(GlobalContext);

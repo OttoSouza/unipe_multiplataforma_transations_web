@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     color: "rgba(184, 58, 46)",
   },
 }));
-export default function EditIncome({ incomes }) {
+export default function UpdateIncomes({ incomes }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const { updateIncome } = useContext(GlobalContext);

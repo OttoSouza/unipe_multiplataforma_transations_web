@@ -14,7 +14,7 @@ import useStyles from "./styles";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { GlobalContext } from "../../context/GlobalContextProvides";
-import EditIncome from "../../components/EditIncomes";
+import UpdateIncomes from "../../pages/UpdateIncomes";
 function Incomes() {
   const classes = useStyles();
   const { incomes, addIncomes, deleteIncome } = useContext(GlobalContext);
@@ -47,7 +47,7 @@ function Incomes() {
         <IconButton onClick={() => deleteIncome(income.id)}>
           <DeleteOutlineIcon />
         </IconButton>
-        <EditIncome incomes={income} />
+        <UpdateIncomes incomes={income} />
       </div>
     </ListItem>
   ));

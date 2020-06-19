@@ -13,7 +13,7 @@ import {
 import useStyles from "./styles";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import ListTransactions from "../../components/ListTransactions";
-import EditExpenses from "../../components/EditExpenses";
+import UpdateExpenses from "../../pages/UpdateExpenses";
 // import { Container } from './styles';
 import * as Yup from "yup";
 const Expenses = () => {
@@ -47,7 +47,7 @@ const Expenses = () => {
         <IconButton onClick={() => deleteExpenses(expense.id)}>
           <DeleteOutlineIcon />
         </IconButton>
-        <EditExpenses expenses={expense} />
+        <UpdateExpenses expenses={expense} />
       </div>
     </ListItem>
   ));
